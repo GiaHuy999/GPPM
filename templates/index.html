@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div id="img-l"><img src="/static/images/logo.png"/></div>
+    <div id="img-r"><img src="/static/images/logo.png"/></div>
+    <section>
+        <div class="exam-container">
+            <button id="start-button" onclick="startExam()">Bắt đầu thi</button>
+            <div id="questions-container" style="display: none;">
+                
+                <div class="question" id="question-1">
+                    <p>Câu hỏi 1: Việt Nam có bao nhiêu tỉnh, thành phố trực thuộc trung ương?</p>
+                    <label><input type="checkbox" name="q1" value="A" onclick="submitAnswer(1)"> A. 54</label><br>
+                    <label><input type="checkbox" name="q1" value="B" onclick="submitAnswer(1)"> B. 63</label><br>
+                    <label><input type="checkbox" name="q1" value="C" onclick="submitAnswer(1)"> C. 58</label><br>
+                    <label><input type="checkbox" name="q1" value="D" onclick="submitAnswer(1)"> D. 64</label><br>
+                </div>
+    
+                <div class="question" id="question-2" style="display: none;">
+                    <p>Câu hỏi 2: Vịnh Hạ Long của Việt Nam thuộc tỉnh nào?</p>
+                    <label><input type="checkbox" name="q2" value="A" onclick="submitAnswer(2)"> A. Quảng Ninh</label><br>
+                    <label><input type="checkbox" name="q2" value="B" onclick="submitAnswer(2)"> B. Thanh Hóa</label><br>
+                    <label><input type="checkbox" name="q2" value="C" onclick="submitAnswer(2)"> C. Ninh Bình</label><br>
+                    <label><input type="checkbox" name="q2" value="D" onclick="submitAnswer(2)"> D. Hải Phòng</label><br>
+                </div>
+    
+                <div class="question" id="question-3" style="display: none;">
+                    <p>Câu hỏi 3: Quốc hoa của Việt Nam là loài hoa nào?</p>
+                    <label><input type="checkbox" name="q3" value="A" onclick="submitAnswer(3)"> A. Hoa mai</label><br>
+                    <label><input type="checkbox" name="q3" value="B" onclick="submitAnswer(3)"> B. Hoa sen</label><br>
+                    <label><input type="checkbox" name="q3" value="C" onclick="submitAnswer(3)"> C. Hoa lan</label><br>
+                    <label><input type="checkbox" name="q3" value="D" onclick="submitAnswer(3)"> D. Hoa đào</label><br>
+                </div>
+    
+                <div class="question" id="question-4" style="display: none;">
+                    <p>Câu hỏi 4: Đỉnh núi cao nhất Việt Nam là đỉnh nào?</p>
+                    <label><input type="checkbox" name="q4" value="A" onclick="submitAnswer(4)"> A. Phan Xi Păng</label><br>
+                    <label><input type="checkbox" name="q4" value="B" onclick="submitAnswer(4)"> B. Tây Côn Lĩnh</label><br>
+                    <label><input type="checkbox" name="q4" value="C" onclick="submitAnswer(4)"> C. Bạch Mã</label><br>
+                    <label><input type="checkbox" name="q4" value="D" onclick="submitAnswer(4)"> D. Ngọc Linh</label><br>
+                </div>
+    
+                <div class="question" id="question-5" style="display: none;">
+                    <p>Câu hỏi 5: Thủ đô của Việt Nam là gì?</p>
+                    <label><input type="checkbox" name="q5" value="A" onclick="submitAnswer(5)"> A. Hà Nội</label><br>
+                    <label><input type="checkbox" name="q5" value="B" onclick="submitAnswer(5)"> B. TP. Hồ Chí Minh</label><br>
+                    <label><input type="checkbox" name="q5" value="C" onclick="submitAnswer(5)"> C. Đà Nẵng</label><br>
+                    <label><input type="checkbox" name="q5" value="D" onclick="submitAnswer(5)"> D. Hải Phòng</label><br>
+                </div>
+    
+                <p>Số lần cảnh báo: <span id="warning-count">0</span></p>
+            </div>
+    
+            <div id="warning-container" style="display: none;">
+                <p id="warning-message"></p>
+            </div>
+        </div>
+      
+        <img id="camera" src="http://127.0.0.1:5000/video_feed" alt="Live Video Feed" width="640" height="480">
+
+
+    </section>
+</body>
+</html>
